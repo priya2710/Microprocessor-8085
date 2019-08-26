@@ -1,0 +1,28 @@
+lda 0001h
+mov b,a
+lxi h,3001h
+mvi c,01h
+loop: inr c
+sbi 64h
+cc set
+jp loop
+adi 64h
+dcr c
+cc set
+mov m,c
+inx h
+mvi c,00h
+loop1: inr c
+sbi 0ah
+cc set
+jp loop1
+cc set
+adi 0ah
+dcr c
+mov m,c
+inx h
+mov m,a
+inx h
+hlt
+set: cmc
+ret

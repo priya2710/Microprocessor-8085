@@ -1,0 +1,10 @@
+lxi h,0001h
+mov a,m
+cpi 58h
+jnc loop
+sui 37h
+jmp loop1
+loop: sui 30h
+loop1: inx h
+mov m,a
+hlt

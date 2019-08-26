@@ -1,0 +1,20 @@
+lda 0002h
+loop: cpi 64
+jc carry
+sui 64
+inr e
+jmp loop
+carry: cpi 0ah
+jc loop1
+sui 0ah
+inr d
+jmp carry
+loop1: mov c,a
+mov a,d
+rlc
+rlc
+rlc
+rlc
+add c
+sta 0003h
+hlt

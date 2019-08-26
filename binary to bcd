@@ -1,0 +1,12 @@
+lxi h,0001h
+mov c,m
+loop: adi 01h
+daa
+jnc loop1
+inr d
+loop1: dcr c
+jnz loop
+mov l,a
+mov h,d
+shld 0002h
+hlt

@@ -1,0 +1,19 @@
+lxi h,0001h
+mov c,m
+mov a,c
+ani 0fh
+mov e,a
+mov a,c
+ani 0f0h
+rrc 
+rrc
+rrc
+rrc
+mov d,a
+mvi a,00h
+loop: adi 0ah
+dcr d
+jnz loop
+add e
+sta 0002h
+hlt

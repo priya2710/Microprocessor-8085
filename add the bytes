@@ -1,0 +1,13 @@
+lxi h,2250h
+mvi c,06h
+sum: add m
+     jnc next
+     inr b
+next: inx h
+      dcr c
+      jnz sum
+out 00
+mov a,b
+out 01
+stax d
+hlt

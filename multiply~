@@ -1,0 +1,10 @@
+lhld 8100h
+xchg
+mov c,d
+mvi d,00h
+lxi h,0000h
+loop: dad d
+      dcr c
+      jnz loop
+shld 8200h
+hlt

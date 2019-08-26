@@ -1,0 +1,14 @@
+lxi h,0001h
+mov a,m
+mov b,a
+stc
+cmc
+sui 0ah
+jc loop
+adi 41h
+jmp loop1
+loop: mov a,b
+adi 30h
+loop1: inx h
+mov m,a
+hlt

@@ -1,0 +1,14 @@
+lxi h,0001h
+mvi d,00h
+xra a
+mov c,m
+loop2: adi 01
+daa
+jnc loop1
+inr d
+loop1: dcr c
+jnz loop2
+sta 0002h
+mov a,d
+sta 0003h
+hlt

@@ -1,0 +1,19 @@
+start: lxi h,1150h
+mvi d,00h
+mvi c,02h
+check: mov a,m
+inx h
+cmp m
+jnc next
+mov b,m
+mov m,a
+dcx h
+mov m,b
+inx h
+mvi d,01h
+next: dcr c
+jnz check
+mov a,d
+rrc
+jc start
+hlt
